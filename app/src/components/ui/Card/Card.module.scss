@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  width: 100%;
+  color: #94a3b8;
+  background-color: #18181b;
+  border: 1px solid #2e2e38;
+  min-height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+
+  h1 {
+    color: white;
+    font-weight: 300;
+    font-size: 17px;
+    width: 100%;
+  }
+
+  p {
+    width: 100%;
+    font-weight: 200;
+  }
+
+  span {
+    color: white;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 12px;
+    font-weight: 100;
+  }
+}
