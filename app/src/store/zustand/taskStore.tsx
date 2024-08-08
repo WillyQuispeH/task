@@ -2,8 +2,15 @@ import { Category, Task, TaskState } from "@/interfaces/type";
 import { StateCreator, create } from "zustand";
 import { persist } from "zustand/middleware";
 
+export interface Schedule {
+  time: string;
+  activity: string;
+  completed: boolean;
+}
+
 type taskStateStore = {
   modalNew: boolean;
+  schedules: Schedule[];
   isLoading: boolean;
   isError: boolean;
   error: string;
@@ -12,6 +19,7 @@ type taskStateStore = {
   addTask: (task: Task, category: Category) => void;
   moveTask: (task: Task, fromCategory: Category, toCategory: Category) => void;
   setTasks: (tasks: TaskState) => void;
+  setSchedules: (schedules: Schedule[]) => void;
 };
 
 const store: StateCreator<taskStateStore> = (set) => ({
@@ -20,6 +28,7 @@ const store: StateCreator<taskStateStore> = (set) => ({
     proceso: [],
     terminadas: [],
   },
+  schedules: [],
   modalNew: false,
   isLoading: false,
   isError: false,
@@ -32,6 +41,12 @@ const store: StateCreator<taskStateStore> = (set) => ({
         [category]: [...state.tasks[category], task],
       },
     })),
+
+  setSchedules: (schedules: Schedule[]) =>
+    set((state) => ({
+      schedules,
+    })),
+
   moveTask: (task, fromCategory, toCategory) =>
     set((state) => {
       if (fromCategory === toCategory) return state;

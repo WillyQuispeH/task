@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Category, Task, TaskState } from "@/interfaces/type";
 import TaskList from "../List/TaskList";
 
@@ -48,16 +48,7 @@ const TaskBoard: React.FC = () => {
           />
         ))}
       </div>
-      <div className={styles.containerBtn}>
-        <span
-          className={`material-symbols-outlined ${styles.buttonAdd}`}
-          onClick={() => {
-            setModalNew(true);
-          }}
-        >
-          add
-        </span>
-      </div>
+
       <Overlay active={modalNew}>
         <Modal
           title="Nueva tarea"

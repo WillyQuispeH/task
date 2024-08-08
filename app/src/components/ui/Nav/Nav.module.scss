@@ -1,0 +1,41 @@
+.containerBtn {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 10px;
+  height: 100vh;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .accion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.buttonAdd {
+  background: #38bdf8;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: 200;
+  cursor: pointer;
+}
+.buttonSave {
+  background: #6b7280;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: 200;
+  cursor: pointer;
+}
